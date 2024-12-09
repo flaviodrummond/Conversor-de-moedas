@@ -3,4 +3,106 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    outline: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+.logo {
+    width: 300px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+main {
+    width: 30%;
+    border-radius: 20px;
+    margin: 0 auto 40px;
+    border: 2px solid #FFC91F;
+    padding: 44px 24px 23px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.convert-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 150px;
+}
+
+select, input {
+    background: #000000;
+    border: 1px solid #EEC30E;
+    border-radius: 4px;
+    height: 48px;
+    width: 100%;
+    margin: 5px 0 24px;
+    display: flex;
+    justify-content: center;
+    padding-left: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+button {
+    background: #E8C53C;
+    width: 100%;
+    border: none;
+    height: 48px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .8;
+}
+
+button:active {
+    background: #FFC91F;
+}
+
+section {
+    border: 2px solid #FFC91F;
+    margin-top: 36px;
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.arrow {
+    width: 80px;
+    margin: 10px 0;
+}
+
+.currency {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.value {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
 }

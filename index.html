@@ -14,9 +14,10 @@
 
 <body>
 
-    <img src="./assets/moedas.png" alt="Logo Moedas">
+    <img class="logo" src="./assets/Conversor-1.png" alt="Logo Moedas">
 
     <main>
+<div class="convert-label">
         <label>
             Converter <b>de</b>
             <select>
@@ -31,29 +32,30 @@
                 <option>Euro</option>
             </select>
         </label>
-
+    </div>
         <label>
             <input placeholder="1.000,00">
         </label>
 
         <button>Converter</button>
-    </main>
 
     <section>
-        <div>
+        <div class="currency-box">
             <img src="./assets/Real.png" alt="Real brasileiro">
-            <p>Real</p>
-            <p>R$ 0</p>
+            <p class="currency">Real</p>
+            <p class="value">R$ 0</p>
         </div>
 
-        <img src="./assets/flechaparabaixo.png" alt="Seta">
+        <img class="arrow" src="./assets/seta.png" alt="Seta">
 
-        <div>
+        <div class="currency-box">
             <img src="./assets/Dollar.png" alt="Dólar americano">
-            <p>Dólar</p>
-            <p>US$ 0</p>
+            <p class="currency">Dólar</p>
+            <p class="value">US$ 0</p>
         </div>
     </section>
+
+</main>
 
 </body>
 

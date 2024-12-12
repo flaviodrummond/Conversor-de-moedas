@@ -1,6 +1,8 @@
 const convertButton = document.querySelector(".convert-button")
+const valueConvert = document.querySelector(".value-convert")
+const valueConverted = document.querySelector(".converted-value")
 
-function convertValue(){
+function convertValue() {
 
     const dollarDay = 6.05
 
@@ -8,7 +10,15 @@ function convertValue(){
 
     const convertedValue = inputValue / dollarDay
 
-    console.log(convertedValue)    
+    valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+        style: "currency",
+        currency: "BRL"
+    }).format(inputValue)
+
+    valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+        style: "currency",
+        currency: "USD"
+    }).format(convertedValue)
 
 }
 

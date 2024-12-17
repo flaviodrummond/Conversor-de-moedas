@@ -11,14 +11,14 @@ function convertValue() {
 
     const inputValue = document.querySelector(".input-value").value
 
-    if(selectConverted.value == "dollar"){
+    if (selectConverted.value == "dollar") {
         valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
             style: "currency",
             currency: "USD"
         }).format(inputValue / dollarToDay)
     }
 
-    if(selectConverted.value == "euro"){
+    if (selectConverted.value == "euro") {
         valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
             style: "currency",
             currency: "EUR"
@@ -30,10 +30,29 @@ function convertValue() {
         currency: "BRL"
     }).format(inputValue)
 
+}
+
+function changeCurrency() {
+
+    const currencyName = document.querySelector(".currency-name")
+    const changeFlag = document.querySelector(".change-flag")
+
+    if (selectConverted.value == 'dollar') {
+        currencyName.innerHTML = "Dólar",
+        changeFlag.src = ('./assets/Dollar.png')
+
     }
-    
 
-    
+    if(selectConverted.value == 'euro') {
+        currencyName.innerHTML = "Euro",
+        changeFlag.src = ('./assets/Euro.png')
+    }
 
+    convertValue()
+}
+
+
+
+selectConverted.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValue)
 

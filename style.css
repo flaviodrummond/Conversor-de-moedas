@@ -100,7 +100,7 @@ section {
     margin: 10px 0;
 }
 
-.currency {
+.currency-name, .currency {
     color: #ffffff;
     font-size: 14px;
 }

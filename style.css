@@ -67,7 +67,7 @@ button {
     color: #ffffff;
     font-weight: 700;
     font-size: 18px;
-    text-shadow: black 0.1em 0.1em 0.1em;
+    text-shadow: black 0.1em 0.1em 0.2em;
     cursor: pointer;
 }
 

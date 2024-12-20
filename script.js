@@ -15,7 +15,43 @@ function convertValue() {
 
     const inputValue = document.querySelector(".input-value").value
 
-    if (selectConverted.value == "real" && mainCurrency.value == "real") {
+    if (mainCurrency.value == "real" && selectConverted.value == "dollar") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue / dollarToDay)
+    }
+
+    if (mainCurrency.value == "real" && selectConverted.value == "euro") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue / euroToDay)
+    }
+
+    if (mainCurrency.value == "real" && selectConverted.value == "libra") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputValue / libraToDay)
+    }
+
+    if (mainCurrency.value == "real" && selectConverted.value == "real") {
         valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
             style: "currency",
             currency: "BRL"
@@ -27,7 +63,31 @@ function convertValue() {
         }).format(inputValue)
     }
 
-    if (selectConverted.value == "dollar" && mainCurrency.value == "dollar") {
+    if (mainCurrency.value == "real" && selectConverted.value == "bitcoin") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue / bitToDay)
+    }
+
+    if (mainCurrency.value == "real" && selectConverted.value == "ethereum") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue / euthToDay)
+    }
+
+    if (mainCurrency.value == "dollar" && selectConverted.value == "dollar") {
         valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
             style: "currency",
             currency: "USD"

@@ -2,21 +2,41 @@ const convertButton = document.querySelector(".convert-button")
 const valueConvert = document.querySelector(".value-convert")
 const valueConverted = document.querySelector(".converted-value")
 const selectConverted = document.querySelector(".select-converted")
+const mainCurrency = document.querySelector(".main-currency")
 
 
 function convertValue() {
 
     const dollarToDay = 6.05
     const euroToDay = 6.27
+    const libraToDay = 7.69
     const bitToDay = 637280.60
+    const euthToDay = 21190.64
 
     const inputValue = document.querySelector(".input-value").value
 
-    if (selectConverted.value == "dollar") {
+    if (selectConverted.value == "real" && mainCurrency.value == "real") {
+        valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue)
+    }
+
+    if (selectConverted.value == "dollar" && mainCurrency.value == "dollar") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
         valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
             style: "currency",
             currency: "USD"
-        }).format(inputValue / dollarToDay)
+        }).format(inputValue)
     }
 
     if (selectConverted.value == "euro") {
@@ -26,39 +46,82 @@ function convertValue() {
         }).format(inputValue / euroToDay)
     }
 
+    if (selectConverted.value == "libra") {
+        valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputValue / libraToDay)
+    }
+
     if (selectConverted.value == "bitcoin") {
-        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
             style: "currency",
             currency: "BTC"
         }).format(inputValue / bitToDay)
     }
 
-    valueConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
-        style: "currency",
-        currency: "BRL"
-    }).format(inputValue)
+    if (selectConverted.value == "ethereum") {
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue / euthToDay)
+    }
 
 }
+
+function changeMainCurrency() {
+
+    const currency = document.querySelector(".currency")
+    const exchangeCurrency = document.querySelector(".exchange-currency")
+
+    if (mainCurrency.value == "dollar") {
+        currency.innerHTML = "Dólar"
+        exchangeCurrency.src = './assets/Dollar.png'
+    }
+
+    if (mainCurrency.value == "euro") {
+        currency.innerHTML = "Euro"
+        exchangeCurrency.src = './assets/Euro.png'
+    }
+
+    convertValue()
+}
+
 
 function changeCurrency() {
 
     const currencyName = document.querySelector(".currency-name")
     const changeFlag = document.querySelector(".change-flag")
 
-    if (selectConverted.value == 'dollar') {
+    if (selectConverted.value == "dollar") {
         currencyName.innerHTML = "Dólar U$$"
-            changeFlag.src = './assets/Dollar.png'
+        changeFlag.src = './assets/Dollar.png'
 
     }
 
-    if (selectConverted.value == 'euro') {
+    if (selectConverted.value == "euro") {
         currencyName.innerHTML = "Euro"
-            changeFlag.src = './assets/Euro.png'
+        changeFlag.src = './assets/Euro.png'
     }
 
-    if (selectConverted.value == 'bitcoin') {
+    if (selectConverted.value == "libra") {
+        currencyName.innerHTML = "Libra"
+        changeFlag.src = './assets/libra.png'
+    }
+
+    if (selectConverted.value == "real") {
+        currencyName.innerHTML = "Real"
+        changeFlag.src = './assets/Real.png'
+    }
+
+    if (selectConverted.value == "bitcoin") {
         currencyName.innerHTML = "Bitcoin"
-            changeFlag.src = './assets/bitcoin.png'
+        changeFlag.src = './assets/bitcoin.png'
+    }
+
+    if (selectConverted.value == "ethereum") {
+        currencyName.innerHTML = "Ethereum"
+        changeFlag.src = './assets/ethereum.png'
     }
 
     convertValue()
@@ -68,4 +131,5 @@ function changeCurrency() {
 
 selectConverted.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValue)
+mainCurrency.addEventListener("change", changeMainCurrency)
 

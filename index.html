@@ -21,8 +21,11 @@
 <div class="convert-label">
         <label>
             Converter <b>de</b>
-            <select>
-                <option>Real</option>
+            <select class="main-currency">
+                <option value="real">Real</option>
+                <option value="dollar">Dólar</option>
+                <option value="euro">Euro</option>
+
             </select>
         </label>
 
@@ -31,7 +34,10 @@
             <select class="select-converted">
                 <option value="dollar">Dólar</option>
                 <option value="euro">Euro</option>
+                <option value="libra">Libra</option>
+                <option value="real">Real</option>
                 <option value="bitcoin">Bitcoin</option>
+                <option value="ethereum">Ethereum</option>
             </select>
         </label>
     </div>
@@ -43,7 +49,7 @@
 
     <section>
         <div class="currency-box">
-            <img src="./assets/Real.png" alt="Real brasileiro">
+            <img class="exchange-currency" src="./assets/Real.png" alt="Real brasileiro">
             <p class="currency">Real</p>
             <p class="value-convert">R$ 0</p>
         </div>

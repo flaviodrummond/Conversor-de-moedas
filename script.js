@@ -9,9 +9,9 @@ function convertValue() {
 
     const dollarToDay = 5.81
     const euroToDay = 6.67
-    const libraToDay = 7.77
+    const libraToDay = 7.76
     const bitToDay = 512283.63
-    const euthToDay = 9438.85
+    const euthToDay = 9144.85
 
     const inputValue = document.querySelector(".input-value").value
 
@@ -99,33 +99,67 @@ function convertValue() {
         }).format(inputValue)
     }
 
-    if (selectConverted.value == "euro") {
+    if (mainCurrency.value == "dollar" && selectConverted.value == "euro") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
         valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
             style: "currency",
             currency: "EUR"
-        }).format(inputValue / euroToDay)
+        }).format((inputValue * dollarToDay) / euroToDay)
     }
 
-    if (selectConverted.value == "libra") {
+    if (mainCurrency.value == "dollar" && selectConverted.value == "libra") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
         valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
             style: "currency",
             currency: "GBP"
-        }).format(inputValue / libraToDay)
+        }).format((inputValue * dollarToDay) / libraToDay )
     }
 
-    if (selectConverted.value == "bitcoin") {
+    if (mainCurrency.value == "dollar" && selectConverted.value == "real") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue * dollarToDay )
+    }
+
+    if (mainCurrency.value == "dollar" && selectConverted.value == "bitcoin") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
         valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
             style: "currency",
             currency: "BTC"
-        }).format(inputValue / bitToDay)
+        }).format((inputValue * dollarToDay) / bitToDay )
     }
 
-    if (selectConverted.value == "ethereum") {
+    if (mainCurrency.value == "dollar" && selectConverted.value == "ethereum") {
+        valueConvert.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format(inputValue)
+
         valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
             style: "currency",
             currency: "ETH"
-        }).format(inputValue / euthToDay)
+        }).format((inputValue * dollarToDay) / euthToDay )
     }
+
+
 
 }
 
@@ -133,6 +167,11 @@ function changeMainCurrency() {
 
     const currency = document.querySelector(".currency")
     const exchangeCurrency = document.querySelector(".exchange-currency")
+
+    if (mainCurrency.value == "real") {
+        currency.innerHTML = "Real"
+        exchangeCurrency.src = './assets/real.png'
+    }
 
     if (mainCurrency.value == "dollar") {
         currency.innerHTML = "Dólar"

@@ -7,11 +7,11 @@ const mainCurrency = document.querySelector(".main-currency")
 
 function convertValue() {
 
-    const dollarToDay = 6.05
-    const euroToDay = 6.27
-    const libraToDay = 7.69
-    const bitToDay = 637280.60
-    const euthToDay = 21190.64
+    const dollarToDay = 5.81
+    const euroToDay = 6.67
+    const libraToDay = 7.77
+    const bitToDay = 512283.63
+    const euthToDay = 9438.85
 
     const inputValue = document.querySelector(".input-value").value
 

@@ -159,6 +159,77 @@ function convertValue() {
         }).format((inputValue * dollarToDay) / euthToDay )
     }
 
+    if (mainCurrency.value == "euro" && selectConverted.value == "dollar") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format((inputValue * euroToDay) / dollarToDay )
+    }
+
+    if (mainCurrency.value == "euro" && selectConverted.value == "euro") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+    }
+
+    if (mainCurrency.value == "euro" && selectConverted.value == "libra") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
+            style: "currency",
+            currency: "GBP"
+        }).format((inputValue * euroToDay) / libraToDay )
+    }
+
+    if (mainCurrency.value == "euro" && selectConverted.value == "real") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue * euroToDay)
+    }
+
+    if (mainCurrency.value == "euro" && selectConverted.value == "bitcoin") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format((inputValue * euroToDay) / bitToDay )
+    }
+
+    if (mainCurrency.value == "euro" && selectConverted.value == "ethereum") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "ETH"
+        }).format((inputValue * euroToDay) / euthToDay )
+    }
 
 
 }
@@ -183,6 +254,11 @@ function changeMainCurrency() {
         exchangeCurrency.src = './assets/Euro.png'
     }
 
+    if (mainCurrency.value == "libra") {
+        currency.innerHTML = "Libra Esterlina"
+        exchangeCurrency.src = './assets/libra.png'
+    }
+
     convertValue()
 }
 
@@ -204,7 +280,7 @@ function changeCurrency() {
     }
 
     if (selectConverted.value == "libra") {
-        currencyName.innerHTML = "Libra"
+        currencyName.innerHTML = "Libra Esterlina"
         changeFlag.src = './assets/libra.png'
     }
 

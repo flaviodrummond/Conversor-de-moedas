@@ -303,6 +303,151 @@ function convertValue() {
         }).format((inputValue * libraToDay) / euthToDay )
     }
 
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "dollar") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format((inputValue * bitToDay) / dollarToDay )
+    }
+
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "euro") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format((inputValue * bitToDay) / euroToDay )
+    }
+
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "libra") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
+            style: "currency",
+            currency: "GBP"
+        }).format((inputValue * bitToDay) / libraToDay )
+    }
+
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "real") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue * bitToDay)
+    }
+
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "bitcoin") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+    }
+
+    if (mainCurrency.value == "bitcoin" && selectConverted.value == "ethereum") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format((inputValue * bitToDay) / euthToDay )
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "dollar") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency",
+            currency: "USD"
+        }).format((inputValue * euthToDay) / dollarToDay )
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "euro") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "EUR"
+        }).format((inputValue * euthToDay) / euroToDay )
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "libra") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('en-GB', {
+            style: "currency",
+            currency: "GBP"
+        }).format((inputValue * euthToDay) / libraToDay )
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "real") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputValue * euthToDay)
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "bitcoin") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "BTC"
+        }).format((inputValue * euthToDay) / bitToDay )
+    }
+
+    if (mainCurrency.value == "ethereum" && selectConverted.value == "ethereum") {
+        valueConvert.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+
+        valueConverted.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: "currency",
+            currency: "ETH"
+        }).format(inputValue)
+    }
+    
+
 }
 
 function changeMainCurrency() {
@@ -328,6 +473,16 @@ function changeMainCurrency() {
     if (mainCurrency.value == "libra") {
         currency.innerHTML = "Libra Esterlina"
         exchangeCurrency.src = './assets/libra.png'
+    }
+
+    if (mainCurrency.value == "bitcoin") {
+        currency.innerHTML = "Bitcoin"
+        exchangeCurrency.src = './assets/bitcoin.png'
+    }
+
+    if (mainCurrency.value == "ethereum") {
+        currency.innerHTML = "Ethereum"
+        exchangeCurrency.src = './assets/ethereum.png'
     }
 
     convertValue()
